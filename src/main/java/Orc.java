@@ -2,19 +2,16 @@ import java.util.ArrayList;
 
 public class Orc extends Enemy implements IAttack, IDamageable {
 
-    private ArrayList<Attack> attacks;
 
-    public Orc(String name) {
-        super(name);
+
+    public Orc() {
+        super("Orc");
         super.setHP(50);
-        attacks = new ArrayList<Attack>();
-        attacks.add(Attack.MELEE);
-        attacks.add(Attack.BITE);
+        super.setAttacks(Attack.MELEE);
+        super.setAttacks(Attack.BITE);
     }
 
-    public ArrayList<Attack> getAttacks() {
-        return attacks;
-    }
+
 
     public void attack(IDamageable victim, Attack attack) {
         victim.takeDamage(attack.getAttack_value());

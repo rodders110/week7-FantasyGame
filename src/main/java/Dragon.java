@@ -3,20 +3,15 @@ import java.util.ArrayList;
 public class Dragon extends Enemy implements IAttack, IDamageable {
 
 
-    private ArrayList<Attack> attacks;
 
-    public Dragon(String name) {
-        super(name);
+    public Dragon() {
+        super("Dragon");
         super.setHP(100);
-        attacks = new ArrayList<Attack>();
-        attacks.add(Attack.MELEE);
-        attacks.add(Attack.FIREBALL);
-        attacks.add(Attack.BITE);
+        super.setAttacks(Attack.MELEE);
+        super.setAttacks(Attack.FIREBALL);
+        super.setAttacks(Attack.BITE);
     }
 
-    public ArrayList<Attack> getAttacks() {
-        return attacks;
-    }
 
     public void attack(IDamageable victim, Attack attack) {
         victim.takeDamage(attack.getAttack_value());
